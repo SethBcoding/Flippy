@@ -5,6 +5,7 @@
     padding: 0;
 }
 
+
 /* Body styles */
 body {
     font-family: Arial, sans-serif;
@@ -16,13 +17,14 @@ header {
     position: relative;
 }
 
+
 /* Top navigation styles */
 .topnav {
     overflow: hidden;
     background-color: #f60;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Align items to the start and end */
+    justify-content: space-between; /* Align items to start and end */
     padding: 14px 16px;
 }
 
@@ -33,7 +35,7 @@ header {
 }
 
 .topnav .logo {
-    height: 60px; /* Adjust the height as needed */
+    height: 60px; /* Adjust height as needed */
     width: auto;  /* Maintain aspect ratio */
 }
 
@@ -41,13 +43,13 @@ header {
 .profile {
     display: flex;
     align-items: center;
-    margin-left: auto; /* Move the icon to the right */
+    margin-left: auto; /* Move icon to right */
 }
 
 .profile-icon {
-    height: 40px; /* Adjust the height as needed */
+    height: 40px; /* Adjust height as needed */
     width: auto;  /* Maintain aspect ratio */
-    border-radius: 50%; /* Optional: make it circular */
+    border-radius: 50%; /* Optional: make circular */
 }
 
 /* Hamburger icon styles */
@@ -55,26 +57,33 @@ header {
     display: none;
 }
 
+/* Adjust profile icon position for mobile */
+@media (max-width: 768px) {
+    .profile svg {
+        vertical-align: middle; /* Adjust as needed */
+        margin-top: -9px; /* Adjust as needed */
+    }
+}
+
 /* Responsive styles */
 @media screen and (max-width: 768px) {
-
+    /* Hide specific links on mobile */
     .topnav a[href="#hot"],
-    .topnav a[href="#catagory"],
+    .topnav a[href="#category"],
     .topnav a[href="#notification"],
     .topnav a[href="#upload"],
     .topnav a[href="#profile"] {
-        display: none; /* Hide the links with the specified IDs */
+        display: none; /* Hide links with specified IDs */
     }
 
     .topnav {
-        justify-content: space-between; /* Align items to the start and end */
-        
+        justify-content: space-between; /* Align start and end */
     }
 
     .icon {
         display: block;
-        order: 1; /* Change the order to move the icon to the right */
-        margin-left: auto; /* Move the icon to the right */
+        order: 1; /* Change order to move icon right */
+        margin-left: auto; /* Move icon right */
     }
 
     .topnav.responsive {
@@ -97,7 +106,7 @@ header {
         text-align: center;
     }
 
-    /* Style the links in myLinks */
+    /* Style links in myLinks */
     #myLinks a {
         display: block;
         color: white;
@@ -118,6 +127,98 @@ header {
     }
 
     .profile {
-        margin-left: auto; /* Move the profile icon to the right for desktop */
+        margin-left: auto; /* Move profile icon right for desktop */
+        padding-left: 10px;
     }
+
+    .profile-icon {
+        padding-left: 10px;
+    }
+}
+
+/* New styles for book wrapper and related elements */
+.bookWrapper {
+    width: 1050px;
+    height: 450px; /* Adjusted height */
+}
+
+.bookBg {
+    position: relative;
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+.centerClass {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.pageBg {
+    background-color: #ffffff;
+    width: 652px;
+    height: 422px;
+    border-radius: 0;
+}
+
+.spineCenter {
+    width: 2px;
+    height: 422px;
+    border-radius: 0;
+    background: rgba(101, 101, 101, 0.4);
+}
+
+.pageWrapper {
+    position: relative;
+    width: 325px;
+    height: 422px;
+    float: left;
+    -webkit-font-smoothing: antialiased;
+}
+
+.pageFace {
+    position: absolute;
+    width: 325px;
+    height: 422px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.pageFace img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the entire page area */
+}
+
+.front {
+    background: linear-gradient(to right, #d9d9d9 0%, #f9f9f9 3%, #ffffff 8%, #ffffff 100%);
+}
+
+.back {
+    background: linear-gradient(to right, #ffffff 0%, #ffffff 92%, #f9f9f9 97%, #d9d9d9 100%);
+}
+
+.pageFoldRight {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: -5px 5px 10px #dddddd;
+}
+
+.pageFoldLeft {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    border-right: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    box-shadow: 5px 5px 10px #dddddd;
 }
