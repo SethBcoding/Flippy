@@ -1,0 +1,123 @@
+/* Reset default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header styles */
+header {
+    background-color: #f60;
+    position: relative;
+}
+
+/* Top navigation styles */
+.topnav {
+    overflow: hidden;
+    background-color: #f60;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Align items to the start and end */
+    padding: 14px 16px;
+}
+
+.topnav a {
+    color: white;
+    text-decoration: none;
+    padding-right: 20px;
+}
+
+.topnav .logo {
+    height: 60px; /* Adjust the height as needed */
+    width: auto;  /* Maintain aspect ratio */
+}
+
+/* Profile icon styles */
+.profile {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Move the icon to the right */
+}
+
+.profile-icon {
+    height: 40px; /* Adjust the height as needed */
+    width: auto;  /* Maintain aspect ratio */
+    border-radius: 50%; /* Optional: make it circular */
+}
+
+/* Hamburger icon styles */
+.icon {
+    display: none;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+
+    .topnav a[href="#hot"],
+    .topnav a[href="#catagory"],
+    .topnav a[href="#notification"],
+    .topnav a[href="#upload"],
+    .topnav a[href="#profile"] {
+        display: none; /* Hide the links with the specified IDs */
+    }
+
+    .topnav {
+        justify-content: space-between; /* Align items to the start and end */
+        
+    }
+
+    .icon {
+        display: block;
+        order: 1; /* Change the order to move the icon to the right */
+        margin-left: auto; /* Move the icon to the right */
+    }
+
+    .topnav.responsive {
+        flex-direction: column;
+    }
+
+    .topnav.responsive a {
+        display: block;
+        text-align: left;
+    }
+
+    .profile {
+        display: none;
+    }
+
+    /* Hide myLinks by default */
+    #myLinks {
+        display: none;
+        background-color: #f60;
+        text-align: center;
+    }
+
+    /* Style the links in myLinks */
+    #myLinks a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        padding: 10px 0;
+    }
+
+    /* Show myLinks in mobile/tablet view */
+    #myLinks.show {
+        display: block;
+    }
+}
+
+/* Hide myLinks in desktop view */
+@media screen and (min-width: 769px) {
+    #myLinks {
+        display: none;
+    }
+
+    .profile {
+        margin-left: auto; /* Move the profile icon to the right for desktop */
+    }
+}
